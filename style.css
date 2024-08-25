@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(198, 57, 198);
+}
+
+.container {
+    max-width: 1000px;
+
+}
+
+.slider .slider-items {
+    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    background-color: gray;
+}
+
+.slider-items::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-items .slider-item {
+    width: 300px;
+    height: 350px;
+    border-radius: 5px;
+    box-shadow: -5px 5px 10px black;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+/* .slider-item:hover{
+    transform: scale(1.1) translateY(-20px);
+} */
+.container .slider-scrollbar {
+    height: 20px;
+    margin-top: 10px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.slider-scrollbar .scroll-line {
+    height: 3px;
+    width: 100%;
+    background-color: rgb(247, 173, 234);
+    border-radius: 5px;
+    position: relative;
+}
+
+.slider-scrollbar .scroll-line:hover {
+    height: 4px;
+}
+
+.scroll-line .scroll-thumb {
+    width: 50%;
+    height: inherit;
+    position: absolute;
+    background-color: black;
+    border-radius: inherit;
+    cursor: grab;
+    left: 0px;
+}
+
+.scroll-line .scroll-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+}
+
+.slider {
+    position: relative;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.btn-prev {
+    left: -20px;
+}
+
+.btn-next {
+    right: -20px;
+}
+
+@media (max-width: 399px) {
+    .container {
+        width: 300px;
+    }
+
+    .btn {
+        display: none !important;
+    }
+}
+
+@media (min-width:400)and (max-width: 620px) {
+    .container {
+        width: 400px;
+    }
+
+    .btn {
+        display: none !important;
+    }
+}
